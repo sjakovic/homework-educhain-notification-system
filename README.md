@@ -45,8 +45,6 @@ symfony serve
 
 Mailer: configure MAILER_DSN in .env.local using Mailtrap
 
-⸻
-
 Frontend (React + Vite)
 
 cd assets/frontend
@@ -57,18 +55,14 @@ Visit: http://localhost:3000
 
 Vite is configured to proxy /api to Symfony on port 8000
 
-⸻
-
 🔧 Test Features
 
 1. Trigger a Test Notification
 
 Go to:
 http://localhost:8000/test/dispatch
-•	Creates an in-app notification
-•	Sends localized email (EN or ES)
-
-⸻
+- Creates an in-app notification
+- Sends localized email (EN or ES)
 
 2. View Notifications (In-App)
 
@@ -77,33 +71,27 @@ React UI will show:
 •	Click to open dropdown
 •	Click to mark as read (API call)
 
-⸻
-
 3. Preferences Management UI
 
 Visit React app and manage:
-•	Types of notifications
-•	Channel (in_app, email)
-•	Frequency (immediate, daily, weekly)
+- Types of notifications
+- Channel (in_app, email)
+- Frequency (immediate, daily, weekly)
 
 Preferences are synced via GET /api/preferences and PUT /api/preferences.
-
-⸻
 
 4. Digest Email Delivery
 
 php bin/console app:send-digest-notifications
 
-	•	Sends daily/weekly grouped notifications
-	•	Localized subject and template
-	•	Uses Twig + Symfony Translator
-
-⸻
+- Sends daily/weekly grouped notifications 
+- alized subject and template 
+- s Twig + Symfony Translator
 
 5. Admin: Manual Notifications
 
 Endpoint: POST /api/notifications/manual
-
+```
 {
 "userId": 1,
 "type": "admin_message",
@@ -111,33 +99,25 @@ Endpoint: POST /api/notifications/manual
 "digest": false,
 "sendEmail": true
 }
+```
 
-	•	Creates notification manually
-	•	Sends email if sendEmail = true
-
-⸻
+- Creates notification manually 
+- Sends email if sendEmail = true
 
 🌐 Localization
 •	Email templates: emails/notifications/*.en.html.twig, *.es.html.twig
 •	Subjects: translations/messages.en.yaml, messages.es.yaml
 •	Translation via TranslatorInterface
 
-⸻
-
 ✅ Acceptance Criteria Coverage
 
-Requirement	Implemented
-In-app notifications	✅
-Email notifications	✅
-Digest delivery (daily/weekly)	✅
-Preferences (type/channel/frequency)	✅
-Multi-language (EN/ES) support	✅
-Manual admin notifications	✅
-Real-time (optional WebSocket)	❌ Not required
-
-
-
-⸻
+- Requirement	Implemented 
+- In-app notifications	✅ 
+- Email notifications	✅ 
+- Digest delivery (daily/weekly)	✅ 
+- Preferences (type/channel/frequency)	✅ 
+- Multi-language (EN/ES) support	✅ 
+- Manual admin notifications	✅
 
 📸 Screenshots
 
