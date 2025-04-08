@@ -65,26 +65,26 @@ Vite is configured to proxy /api to Symfony on port 8000
 
 Go to:
 http://localhost:8000/test/dispatch
-	•	Creates an in-app notification
-	•	Sends localized email (EN or ES)
+•	Creates an in-app notification
+•	Sends localized email (EN or ES)
 
 ⸻
 
 2. View Notifications (In-App)
 
 React UI will show:
-	•	🔔 Notification bell with unread count
-	•	Click to open dropdown
-	•	Click to mark as read (API call)
+•	🔔 Notification bell with unread count
+•	Click to open dropdown
+•	Click to mark as read (API call)
 
 ⸻
 
 3. Preferences Management UI
 
 Visit React app and manage:
-	•	Types of notifications
-	•	Channel (in_app, email)
-	•	Frequency (immediate, daily, weekly)
+•	Types of notifications
+•	Channel (in_app, email)
+•	Frequency (immediate, daily, weekly)
 
 Preferences are synced via GET /api/preferences and PUT /api/preferences.
 
@@ -105,11 +105,11 @@ php bin/console app:send-digest-notifications
 Endpoint: POST /api/notifications/manual
 
 {
-  "userId": 1,
-  "type": "admin_message",
-  "message": "Reminder: update your credentials today.",
-  "digest": false,
-  "sendEmail": true
+"userId": 1,
+"type": "admin_message",
+"message": "Reminder: update your credentials today.",
+"digest": false,
+"sendEmail": true
 }
 
 	•	Creates notification manually
@@ -118,9 +118,9 @@ Endpoint: POST /api/notifications/manual
 ⸻
 
 🌐 Localization
-	•	Email templates: emails/notifications/*.en.html.twig, *.es.html.twig
-	•	Subjects: translations/messages.en.yaml, messages.es.yaml
-	•	Translation via TranslatorInterface
+•	Email templates: emails/notifications/*.en.html.twig, *.es.html.twig
+•	Subjects: translations/messages.en.yaml, messages.es.yaml
+•	Translation via TranslatorInterface
 
 ⸻
 
@@ -150,25 +150,25 @@ Real-time (optional WebSocket)	❌ Not required
 
 📁 Structure Highlights
 
+<pre>
 src/
-  Event/DocumentIssuedEvent.php
-  EventListener/DocumentIssuedListener.php
-  Controller/
-    NotificationController.php
-    NotificationPreferenceController.php
-    AdminNotificationController.php
-  Entity/
-    Notification.php
-    NotificationPreference.php
+├── Event/
+│   └── DocumentIssuedEvent.php
+├── EventListener/
+│   └── DocumentIssuedListener.php
+├── Controller/
+│   ├── NotificationController.php
+│   ├── NotificationPreferenceController.php
+│   └── AdminNotificationController.php
+├── Entity/
+│   ├── Notification.php
+│   └── NotificationPreference.php
 
 assets/frontend/
-  src/components/
-    NotificationBell.jsx
-    NotificationPreferences.jsx
-
-
-
-⸻
+└── src/components/
+    ├── NotificationBell.jsx
+    └── NotificationPreferences.jsx
+</pre>
 
 🙋 Author
 
