@@ -1,0 +1,11 @@
+<p>Hello,</p>
+
+<p>Here is your notification summary:</p>
+
+<ul>
+    {% for n in notifications %}
+        <li>{{ n.message }} ({{ n.createdAt|date('Y-m-d H:i') }})</li>
+    {% endfor %}
+</ul>
+
+<p>Thank you,<br>Educhain</p>
